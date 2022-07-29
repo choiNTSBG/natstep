@@ -11,18 +11,19 @@ namespace PedometerU.Platforms {
         
         private const string Assembly =
         #if (UNITY_IOS || UNITY_WEBGL) && !UNITY_EDITOR
-        "__Internal";
+        //"__Internal";
+        "";
         #else
         "Pedometer";
         #endif
 
         #if UNITY_IOS
-        [DllImport(Assembly, EntryPoint = "PDInitialize")]
-        public static extern void Initialize (StepCallback callback);
-        [DllImport(Assembly, EntryPoint = "PDRelease")]
-        public static extern void Release ();
-        [DllImport(Assembly, EntryPoint = "PDIsSupported")]
-        public static extern bool IsSupported ();
+        //[DllImport(Assembly, EntryPoint = "PDInitialize")]
+        //public static extern void Initialize (StepCallback callback);
+        //[DllImport(Assembly, EntryPoint = "PDRelease")]
+        //public static extern void Release ();
+        //[DllImport(Assembly, EntryPoint = "PDIsSupported")]
+        //public static extern bool IsSupported ();
         #else
         public static void Initialize (StepCallback callback) {}
         public static void Release () {}

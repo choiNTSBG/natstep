@@ -78,7 +78,8 @@ namespace PedometerU {
             // Create implementation for this platform
             Implementation =
             #if UNITY_IOS && !UNITY_EDITOR
-            new PedometeriOS();
+            //new PedometeriOS();
+            null;
             #elif UNITY_ANDROID && !UNITY_EDITOR
             new PedometerAndroid();
             #else
