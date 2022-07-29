@@ -16,7 +16,9 @@ namespace PedometerU.Tests {
         private void Start()
         {
             // Create a new pedometer
+#if UNITY_ANDROID && !UNITY_EDITOR
             pedometer = new Pedometer(OnStep);
+#endif
             // Reset UI
             OnStep(0, 0);
         }
